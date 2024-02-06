@@ -2,15 +2,21 @@ import random
 import time
 
 NB_MIN = 0
-NB_MAX = 5
-QUESTION = 4
-TEMPS_TOTAL = 30
+NB_MAX = int(input(" Quelle nombre max souhaitez vous,  pour vos calcule : "))
+QUESTION = int(input("Quelle nombre d'exercise souhaitez vous : "))
+TEMPS_TOTAL = int(input("Quelle niveau de dificultet vous souhaitez faire : 1- Debutant/ 2- intermedia/ 3- avance "))
+if TEMPS_TOTAL == 1:
+    TEMPS_TOTAL = 45
+elif TEMPS_TOTAL == 2:
+    TEMPS_TOTAL = 35
+elif TEMPS_TOTAL == 3:
+    TEMPS_TOTAL = 25
 
 
 def exercise_aleatoire():
     a = random.randint(NB_MIN, NB_MAX)
     b = random.randint(NB_MIN, NB_MAX)
-    operateur = random.randint(1, 2)
+    operateur = random.randint(1, 4)
 
     if operateur == 1:
         operateur = "+"
